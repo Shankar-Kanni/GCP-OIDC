@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ include "spring-boot.fullname" . }}
   labels:
     {{- include "spring-boot.labels" . | nindent 4 }}
 spec:
