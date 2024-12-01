@@ -19,4 +19,4 @@ jobs:
                 version: '>= 363.0.0'
             - name: List VM
               run: |
-                gcloud compute instances list
+                gcloud compute instances list --project ${{ secrets.PROJECTID }}
