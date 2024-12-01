@@ -13,7 +13,7 @@ jobs:
               with:
                 project_id: ${{ secrets.PROJECTID }}
                 workload_identity_provider: ${{ secrets.workload_identity_provider }}
-                service_account: "github@terra-55091.iam.gserviceaccount.com"
+                service_account: ${{ secrets.service_account }}
             - name: 'Set up Cloud SDK'
               uses: 'google-github-actions/setup-gcloud@v2'
               with:
@@ -21,4 +21,5 @@ jobs:
             - name: List VM
               run: |
                 gcloud --version
+                gcloud config set account ${{ secrets.service_account }}
                 gcloud compute instances list --project ${{ secrets.PROJECTID }}
