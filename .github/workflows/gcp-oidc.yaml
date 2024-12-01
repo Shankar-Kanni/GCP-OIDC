@@ -1,0 +1,22 @@
+name: GCP Auth with OIDC
+on:
+    workflow_dispatch: 
+jobs:
+    gcp-oidc:
+        permissions: write-all
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - uses: 'google-github-actions/auth@v2'
+              with:
+                project_id: ${{ secrets.PROJECTID }}
+                workload_identity_provider: ${{ secrets.workload_identity_provider }}
+            - name: 'Set up Cloud SDK'
+              uses: 'google-github-actions/setup-gcloud@v2'
+              with:
+                version: '>= 363.0.0'
+            - name: List VM
+              run: |
+                gcloud compute instances list
