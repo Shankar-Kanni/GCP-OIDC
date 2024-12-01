@@ -6,10 +6,10 @@ Create a Work identity pool with provide as OIDC and add the github url with req
 
 Create SA or use the existing SA and add the provider url from the pool and grant below role.
 
-gcloud iam service-accounts add-iam-policy-binding "github@terra-55091.iam.gserviceaccount.com" \
-  --project="terra-55091" \
+gcloud iam service-accounts add-iam-policy-binding "XXXX@XXXX.iam.gserviceaccount.com" \
+  --project="XXXX" \
   --role="roles/iam.workloadIdentityUser" \
-  --member="principalSet://iam.googleapis.com/projects/1090358368731/locations/global/workloadIdentityPools/github-actions-sa/attribute.repository/Shankar-Kanni/GCP-OIDC"
+  --member="principalSet://iam.googleapis.com/projects/XXXXX/locations/global/workloadIdentityPools/github-actions-sa/attribute.repository/repo_owner/repo"
 
 
   #To go inside the container
