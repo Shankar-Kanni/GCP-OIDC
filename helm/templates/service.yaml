@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "spring-boot.fullname" . }}
+  name: {{ .Chart.name  }}
   labels:
-    {{- include "spring-boot.labels" . | nindent 4 }}
+    app: spring-boot
 spec:
   type: {{ .Values.service.type }}
   ports:
