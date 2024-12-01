@@ -13,6 +13,7 @@ jobs:
               with:
                 project_id: ${{ secrets.PROJECTID }}
                 workload_identity_provider: ${{ secrets.workload_identity_provider }}
+                service_account: "github@terra-55091.iam.gserviceaccount.com"
             - name: 'Set up Cloud SDK'
               uses: 'google-github-actions/setup-gcloud@v2'
               with:
