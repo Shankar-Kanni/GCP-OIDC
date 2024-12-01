@@ -73,12 +73,12 @@ resources: {}
 
 livenessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /api/hello
+    port: 8080
 readinessProbe:
   httpGet:
-    path: /
-    port: http
+    path: /api/hello
+    port: 8080
 
 autoscaling:
   enabled: false
