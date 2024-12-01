@@ -21,4 +21,8 @@ jobs:
             - name: List VM
               run: |
                 gcloud --version
-                gcloud compute instances list --project ${{ secrets.PROJECTID }}
+                gcloud components install kubectl
+
+                gcloud container clusters get-credentials gke-deep-dive-public --region us-west1 --project ${{ secrets.PROJECTID }}
+
+                kubectl get nodes
