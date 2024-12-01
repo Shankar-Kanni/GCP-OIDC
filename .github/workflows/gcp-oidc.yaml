@@ -21,5 +21,6 @@ jobs:
             - name: List VM
               run: |
                 gcloud --version
+                gcloud auth login
                 gcloud config set account ${{ secrets.service_account }}
                 gcloud compute instances list --project ${{ secrets.PROJECTID }}
