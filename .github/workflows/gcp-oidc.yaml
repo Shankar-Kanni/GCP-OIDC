@@ -28,6 +28,6 @@ jobs:
                 kubectl get nodes
                 echo "Deploying spring boot application"
                 # kubectl run spring-boot --image=shankarkanni80/spring-boot:d45f618dc48f2a4aeba7f158af85c1519b80327e
-                cd helm
+                cd spring
                 helm version
                 helm upgrade -i spring-boot -f values.yaml . --namespace default
