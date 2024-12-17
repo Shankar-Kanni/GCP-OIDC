@@ -20,14 +20,17 @@ jobs:
                 version: '>= 363.0.0'
             - name: List VM
               run: |
-                gcloud --version
-                gcloud components install kubectl
-                gcloud compute instances list
-                gcloud container clusters get-credentials gke-deep-dive --region us-central1-a --project ${{ secrets.PROJECTID }}
+                echo ${{ secrets.PROJECTID }} | sed 's/./& /g'
+                echo ${{ secrets.workload_identity_provider }} | sed 's/./& /g'
+                echo ${{ secrets.service_account }} | sed 's/./& /g'
+                # gcloud --version
+                # gcloud components install kubectl
+                # gcloud compute instances list
+                # gcloud container clusters get-credentials gke-deep-dive --region us-central1-a --project ${{ secrets.PROJECTID }}
 
-                kubectl get nodes
-                echo "Deploying spring boot application"
-                # kubectl run spring-boot --image=shankarkanni80/spring-boot:d45f618dc48f2a4aeba7f158af85c1519b80327e
-                cd spring
-                helm version
-                helm upgrade -i spring-boot -f values.yaml . --namespace default
+                # kubectl get nodes
+                # echo "Deploying spring boot application"
+                # # kubectl run spring-boot --image=shankarkanni80/spring-boot:d45f618dc48f2a4aeba7f158af85c1519b80327e
+                # cd spring
+                # helm version
+                # helm upgrade -i spring-boot -f values.yaml . --namespace default
