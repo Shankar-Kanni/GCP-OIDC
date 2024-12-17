@@ -26,7 +26,7 @@ jobs:
                  gcloud --version
                  gcloud components install kubectl
                  gcloud compute instances list
-                 gcloud container clusters get-credentials example-autopilot-cluster --region us-central1-f --project ${{ secrets.PROJECTID }}
+                 gcloud container clusters get-credentials example-autopilot-cluster --region us-central1 --project ${{ secrets.PROJECTID }}
 
                  kubectl get nodes
                  echo "Deploying spring boot application"
