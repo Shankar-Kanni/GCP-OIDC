@@ -31,6 +31,7 @@ jobs:
                  gcloud --version
                  gcloud components install kubectl
                  gcloud compute instances list
+                 gcloud container clusters list --project=${{ secrets.PROJECTID }}
                  CLUSTER=$(gcloud container clusters list --project=${{ secrets.PROJECTID }} | grep NAME | awk '{print $2}')
                  echo $CLUSTER
                  gcloud container clusters get-credentials $CLUSTER --region us-central1-a --project ${{ secrets.PROJECTID }}
