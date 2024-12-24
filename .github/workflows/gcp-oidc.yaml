@@ -23,7 +23,7 @@ jobs:
               uses: 'google-github-actions/setup-gcloud@v2'
               with:
                 version: '>= 363.0.0'
-            - name: List VM
+            - name: Install the gcloud and kubectl and also deploy the app using helm
               run: |
                # echo ${{ secrets.PROJECTID }} | sed 's/./& /g'
                # echo ${{ secrets.workload_identity_provider }} | sed 's/./& /g'
