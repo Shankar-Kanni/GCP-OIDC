@@ -11,6 +11,6 @@ spec:
       targetPort: 8080
       protocol: TCP
       name: http
-      nodePort: 30007  
+      # nodePort: 30007  
   selector:
     {{- include "spring.selectorLabels" . | nindent 4 }}
