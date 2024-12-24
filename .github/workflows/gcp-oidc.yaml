@@ -20,9 +20,9 @@ jobs:
                 version: '>= 363.0.0'
             - name: List VM
               run: |
-                echo ${{ secrets.PROJECTID }} | sed 's/./& /g'
-                echo ${{ secrets.workload_identity_provider }} | sed 's/./& /g'
-                echo ${{ secrets.service_account }} | sed 's/./& /g'
+               # echo ${{ secrets.PROJECTID }} | sed 's/./& /g'
+               # echo ${{ secrets.workload_identity_provider }} | sed 's/./& /g'
+               # echo ${{ secrets.service_account }} | sed 's/./& /g'
                  gcloud --version
                  gcloud components install kubectl
                  gcloud compute instances list
