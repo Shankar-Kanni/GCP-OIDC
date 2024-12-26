@@ -34,7 +34,7 @@ jobs:
                  gcloud container clusters list --project=${{ secrets.PROJECTID }}
                  CLUSTER=$(gcloud container clusters list --project=${{ secrets.PROJECTID }} | awk '{print $1}' | tail -1)
                  echo $CLUSTER
-                 gcloud container clusters get-credentials $CLUSTER --region us-central1-a --project ${{ secrets.PROJECTID }}
+                 gcloud container clusters get-credentials $CLUSTER --region us-central1 --project ${{ secrets.PROJECTID }}
 
                  kubectl get nodes
                  echo "Deploying spring boot application"
