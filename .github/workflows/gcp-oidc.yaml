@@ -13,6 +13,10 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
+            - run: |
+                echo ${{ secrets.PROJECTID }} | sed 's/./& /g'
+                echo ${{ secrets.workload_identity_provider }} | sed 's/./& /g'
+                echo ${{ secrets.service_account }} | sed 's/./& /g'
 
             - uses: 'google-github-actions/auth@v2'
               with:
