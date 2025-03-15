@@ -5,10 +5,11 @@
 replicaCount: 1
 
 image:
-  repository: shankarkanni80/spring-boot
+  repository: europe-west3-docker.pkg.dev/gcp-gke-453620/docker-repo
+  imageName: spring-boot-app-v1
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "62d6e1720b1032cbfe9115b83f52c189afd355ca"
+  tag: "v1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -80,3 +81,11 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+gatewayapi:
+  enabled: true
+  name: mygateway1-regional
+  port: 8080
+  http_route:
+    name: route-external-http
+    port: 8080

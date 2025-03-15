@@ -1,0 +1,15 @@
+{{ If .Values.gatewayapi.enabled }}
+kind: HTTPRoute
+apiVersion: gateway.networking.k8s.io/v1
+metadata:
+  name: {{ .Values.gatewayapi.http_route.name }}
+spec:
+  parentRefs:
+  - kind: Gateway
+    name: {{ .Values.gatewayapi.name}}
+  rules:
+  - backendRefs:
+    - name: {{ include "spring.fullname" . }}
+      port: {{ .Values.gatewayapi.http_route.port }}
+      weight: 100
+{{ end }}

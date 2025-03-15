@@ -1,0 +1,12 @@
+{{ If .Values.gatewayapi.enabled }}
+kind: Gateway
+apiVersion: gateway.networking.k8s.io/v1
+metadata:
+  name: {{ .Values.gatewayapi.name}}
+spec:
+  gatewayClassName: gke-l7-regional-external-managed
+  listeners:
+  - name: http
+    protocol: HTTP
+    port: {{ .Values.gatewayapi.port}}
+{{ end }}
