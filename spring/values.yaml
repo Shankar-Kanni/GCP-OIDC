@@ -39,7 +39,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 8080
+  port: 80
 
 ingress:
   enabled: false
@@ -85,7 +85,7 @@ affinity: {}
 gatewayapi:
   enabled: true
   name: mygateway1-regional
-  port: 8080
+  port: 80
   http_route:
     name: route-external-http
-    port: 8080
+    port: 80
