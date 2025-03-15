@@ -12,8 +12,8 @@ spec:
     - path:
         type: PathPrefix
         value: /api/hello
-     backendRefs:
-     - name: {{ include "spring.fullname" . }}
-       port: {{ .Values.gatewayapi.http_route.port }}
-       weight: 100
+    backendRefs:
+    - name: {{ include "spring.fullname" . }}
+      port: {{ .Values.gatewayapi.http_route.port }}
+      weight: 100
 {{ end }}
