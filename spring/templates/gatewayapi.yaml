@@ -7,6 +7,6 @@ spec:
   gatewayClassName: gke-l7-regional-external-managed
   listeners:
   - name: http
-    protocol: HTTP
+    protocol: TCP
     port: {{ .Values.gatewayapi.port}}
 {{ end }}
