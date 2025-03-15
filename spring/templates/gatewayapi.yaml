@@ -1,4 +1,4 @@
-{{ If .Values.gatewayapi.enabled }}
+{{- if .Values.gatewayapi.enabled -}}
 kind: Gateway
 apiVersion: gateway.networking.k8s.io/v1
 metadata:
