@@ -88,4 +88,4 @@ gatewayapi:
   port: 80
   http_route:
     name: route-external-http
-    port: 80
+    port: 8080
