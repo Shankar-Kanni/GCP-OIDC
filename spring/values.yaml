@@ -39,7 +39,7 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 80
+  port: 8080
 
 ingress:
   enabled: false
@@ -83,7 +83,7 @@ tolerations: []
 affinity: {}
 
 gatewayapi:
-  enabled: true
+  enabled: false
   name: mygateway1-regional
   port: 80
   http_route:
