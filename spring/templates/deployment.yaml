@@ -31,7 +31,7 @@ spec:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}/{{ .Values.image.imageName }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          image: shankarkanni80/spring-boot-rest:93e63435396bea1bf2540a795230e2f34a346913
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
@@ -39,11 +39,11 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /api/hello
+              path: /health
               port: 8080
           readinessProbe:
             httpGet:
-              path: /api/hello
+              path: /health
               port: 8080
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
