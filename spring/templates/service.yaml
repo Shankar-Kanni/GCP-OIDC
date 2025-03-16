@@ -10,6 +10,6 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: 8080
       name: http
-      nodePort: 30007  
+      # nodePort: 30007  
   selector:
     {{- include "spring.selectorLabels" . | nindent 4 }}
