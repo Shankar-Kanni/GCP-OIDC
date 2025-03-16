@@ -13,7 +13,7 @@ spec:
         type: PathPrefix
         value: /api/hello
     backendRefs:
-    - name: {{ include "spring.fullname" . }}
-      port: {{ .Values.gatewayapi.http_route.port }}
+    - name: spring-boot-service-v1-gw
+      port: 8080
       weight: 100
 {{ end }}

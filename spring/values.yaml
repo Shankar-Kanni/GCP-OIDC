@@ -83,7 +83,7 @@ tolerations: []
 affinity: {}
 
 gatewayapi:
-  enabled: false
+  enabled: true
   name: mygateway1-regional
   port: 80
   http_route:

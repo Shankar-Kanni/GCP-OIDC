@@ -8,5 +8,5 @@ spec:
   listeners:
   - name: http
     protocol: HTTP
-    port: {{ .Values.gatewayapi.port}}
+    port: {{ .Values.gatewayapi.port }}
 {{ end }}
